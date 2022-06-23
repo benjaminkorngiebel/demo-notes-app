@@ -1,12 +1,13 @@
+import { ApiStack } from "./ApiStack";
 import { StorageStack } from "./StorageStack";
 
 export default function main(app) {
   app.setDefaultFunctionProps({
-    runtime: "nodejs16.x",
+    runtime: "nodejs14.x",
     srcPath: "services",
     bundle: {
       format: "esm",
     },
   });
-  app.stack(StorageStack);
+  app.stack(StorageStack).stack(ApiStack);
 }

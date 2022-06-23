@@ -1,20 +1,24 @@
 {
-  "name": "notes",
-  "version": "0.1.0",
+  "name": "javascript-starter",
+  "version": "0.0.0",
   "private": true,
   "scripts": {
-    "test": "sst test",
     "start": "sst start",
     "build": "sst build",
-    "deploy": "sst deploy",
-    "remove": "sst remove"
+    "deploy": "sst deploy --stage=production",
+    "remove": "sst remove",
+    "console": "sst console",
+    "test": "vitest run"
   },
-  "eslintConfig": {
-    "extends": ["serverless-stack"]
+  "devDependencies": {
+    "aws-cdk-lib": "2.24.0",
+    "@serverless-stack/cli": "^1.2.30",
+    "@serverless-stack/resources": "^1.2.30",
+    "typescript": "^4.7.4",
+    "@tsconfig/node16": "^1.0.3",
+    "vitest": "^0.15.2"
   },
-  "dependencies": {
-    "@serverless-stack/cli": "0.69.7",
-    "@serverless-stack/resources": "0.69.7",
-    "aws-cdk-lib": "2.15.0"
-  }
+  "workspaces": [
+    "services"
+  ]
 }
